@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BLEND Café — Modern Multi-Cuisine</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="4.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">BL<span>E</span>ND</a>
+    <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#menu" class="nav-cta">Reserve a Table</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-left">
+      <div class="hero-badge">Now Open — All Day Café</div>
+      <h1 class="hero-title">
+        Where Every<br />
+        Cuisine<br />
+        <em>Finds Its Place</em>
+      </h1>
+      <p class="hero-desc">
+        A modern café that brings together the world's most beloved flavours — Indian, Italian, Asian, and beyond — in one warm, effortless space.
+      </p>
+      <div class="hero-actions">
+        <a href="#menu" class="btn-primary">Explore Our Menu</a>
+        <a href="#about" class="btn-outline">Our Story →</a>
+      </div>
+    </div>
+
+    <div class="hero-image-wrap">
+      <div class="hero-img-main img-placeholder">🍽️</div>
+      <div class="hero-img-accent img-placeholder-sm">☕</div>
+      <div class="hero-stat-card">
+        <span class="num">60+</span>
+        <span class="label">Dishes from<br>around the world</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-grid">
+      <div class="about-left">
+        <div class="section-tag">About BLEND</div>
+        <h2 class="section-title">A café built for curious palates</h2>
+        <p>
+          BLEND was born from a simple idea — that great food doesn't belong to one culture. We celebrate the diversity of global cuisines, crafting each dish with local ingredients and global inspiration.
+        </p>
+        <p>
+          Whether you're here for a quiet morning coffee, a working lunch, or a leisurely dinner with friends, BLEND shapes itself around you.
+        </p>
+        <div class="about-features">
+          <div class="feature-item">
+            <div class="feature-icon">🌿</div>
+            <h4>Farm Fresh</h4>
+            <p>Locally sourced produce, delivered daily.</p>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">🌍</div>
+            <h4>Multi-cuisine</h4>
+            <p>Dishes inspired by 10+ global traditions.</p>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">☕</div>
+            <h4>Specialty Coffee</h4>
+            <p>Single-origin beans, expert brewing.</p>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">🎵</div>
+            <h4>Live Vibe</h4>
+            <p>Live music every Friday & Saturday.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-right">
+        <div class="about-img-big">🧑‍🍳</div>
+        <div class="about-img-small">✨</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section id="menu">
+    <div class="menu-header">
+      <div>
+        <div class="section-tag">What We Serve</div>
+        <h2 class="section-title">Our Signature Menu</h2>
+      </div>
+      <div class="menu-tabs">
+        <button class="menu-tab active" onclick="filterMenu('all', this)">All</button>
+        <button class="menu-tab" onclick="filterMenu('indian', this)">Indian</button>
+        <button class="menu-tab" onclick="filterMenu('italian', this)">Italian</button>
+        <button class="menu-tab" onclick="filterMenu('asian', this)">Asian</button>
+        <button class="menu-tab" onclick="filterMenu('drinks', this)">Drinks</button>
+      </div>
+    </div>
+
+    <div class="menu-grid" id="menuGrid">
+      <!-- cards injected by JS -->
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">BL<span>E</span>ND</div>
+    <div class="footer-info">
+      123, MG Road, Koregaon Park, Pune — 411001<br />
+      Open daily: 8 AM – 11 PM &nbsp;|&nbsp; +91 98765 43210
+    </div>
+    <div class="footer-links">
+      <a href="#">Instagram</a>
+      <a href="#">Facebook</a>
+      <a href="#">Zomato</a>
+    </div>
+  </footer>
+
+  <script>
+    const items = [
+      { name: "Butter Chicken Bowl", desc: "Slow-cooked murgh makhani with saffron basmati, pickled onions & mint chutney.", price: "₹320", emoji: "🍛", tag: "spicy", tagLabel: "Spicy", category: "indian" },
+      { name: "Paneer Tikka Flatbread", desc: "Charred paneer, roasted peppers, coriander aioli on a hand-rolled naan.", price: "₹280", emoji: "🫓", tag: "veg", tagLabel: "Veg", category: "indian" },
+      { name: "Truffle Mushroom Pasta", desc: "Al dente pappardelle in a creamy truffle-porcini sauce with fresh parmesan.", price: "₹360", emoji: "🍝", tag: "new", tagLabel: "New", category: "italian" },
+      { name: "Margherita Romana", desc: "Thin-crust pizza with San Marzano tomatoes, fresh mozzarella & basil oil.", price: "₹310", emoji: "🍕", tag: "veg", tagLabel: "Veg", category: "italian" },
+      { name: "Thai Basil Fried Rice", desc: "Jasmine rice stir-fried with fresh Thai basil, bird's eye chilli & a crispy egg.", price: "₹270", emoji: "🍚", tag: "spicy", tagLabel: "Spicy", category: "asian" },
+      { name: "Ramen Noodle Soup", desc: "Rich tonkotsu broth, soft-boiled egg, bamboo shoots & char siu pork.", price: "₹380", emoji: "🍜", tag: "", tagLabel: "", category: "asian" },
+      { name: "Cold Brew Tonic", desc: "Single-origin cold brew over tonic water with a twist of orange & rosemary.", price: "₹180", emoji: "🥤", tag: "new", tagLabel: "New", category: "drinks" },
+      { name: "Mango Lassi Smoothie", desc: "Alphonso mango, hung curd, cardamom & a hint of saffron — thick & chilled.", price: "₹160", emoji: "🥛", tag: "veg", tagLabel: "Veg", category: "drinks" },
+      { name: "Café Affogato", desc: "Double espresso poured over a generous scoop of vanilla bean gelato.", price: "₹200", emoji: "☕", tag: "new", tagLabel: "New", category: "drinks" },
+    ];
+
+    const bgColors = {
+      indian: "linear-gradient(135deg,#FEF3E8,#F9D8B0)",
+      italian: "linear-gradient(135deg,#FEF9EC,#FAE59B)",
+      asian: "linear-gradient(135deg,#E8F5FE,#A8D9F5)",
+      drinks: "linear-gradient(135deg,#EDE8FE,#C7B8F8)",
+    };
+
+    function renderCards(category) {
+      const grid = document.getElementById('menuGrid');
+      const filtered = category === 'all' ? items : items.filter(i => i.category === category);
+      grid.innerHTML = filtered.map(item => `
+        <div class="menu-card">
+          <div class="menu-card-img" style="background:${bgColors[item.category]}">
+            <span>${item.emoji}</span>
+            ${item.tag ? `<span class="menu-tag ${item.tag}">${item.tagLabel}</span>` : ''}
+          </div>
+          <div class="menu-card-body">
+            <h3>${item.name}</h3>
+            <p>${item.desc}</p>
+            <div class="menu-card-footer">
+              <div class="menu-price">${item.price} <span>per portion</span></div>
+              <button class="add-btn" title="Add to order">+</button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function filterMenu(category, btn) {
+      document.querySelectorAll('.menu-tab').forEach(t => t.classList.remove('active'));
+      btn.classList.add('active');
+      renderCards(category);
+    }
+
+    renderCards('all');
+  </script>
+</body>
+</html>
